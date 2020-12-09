@@ -1,5 +1,5 @@
 import pytest
-from app import is_odd
+from app.main import is_odd
 
 
 data_provider = (
@@ -10,6 +10,6 @@ data_provider = (
 )
 
 
-@pytest.mark.parametrize()
+@pytest.mark.parametrize(['number', 'expected'], data_provider)
 def test_is_odd(number, expected):
     assert is_odd(number) == expected
